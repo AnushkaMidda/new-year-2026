@@ -1,0 +1,157 @@
+/* -------------------- RESET -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #0d0d0f;
+  --gold: #d6b46a;
+  --text-main: #f5f5f5;
+  --text-muted: #bdbdbd;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: radial-gradient(circle at top, #1c1c22, var(--bg-dark));
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* TITLE */
+.title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--gold);
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px var(--gold);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px var(--gold); }
+  to { text-shadow: 0 0 25px var(--gold); }
+}
+
+/* CONFESSIONS TEXT */
+.confession-text {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* CONFESSION ANIMATION */
+@keyframes fadeBlink {
+  0% { opacity: 0; transform: translateY(10px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 1; }
+}
+
+.confession {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeBlink 0.8s forwards;
+}
+
+/* USER CONFESSION */
+.user-confession {
+  margin-top: 3rem;
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+.user-confession h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.user-confession textarea {
+  width: 100%;
+  padding: 1rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--gold);
+  resize: vertical;
+  margin-bottom: 1rem;
+  background: var(--bg-dark);
+  color: var(--text-main);
+}
+
+.user-confession button {
+  padding: 0.8rem 2rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+#userConfessionDisplay {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+/* CONFETTI */
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  opacity: 0.6;
+  border-radius: 50%;
+  animation: fall linear infinite;
+  z-index: 0;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .title { font-size: clamp(1.5rem, 10vw, 2rem); }
+  .confession-text { font-size: clamp(0.85rem, 3vw, 1rem); }
+  .user-confession textarea { font-size: 0.9rem; }
+  .user-confession button { font-size: 0.85rem; }
+}
+
+.confession {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  text-shadow: 0 0 8px rgba(214, 180, 106, 0.3);
+  animation: glowText 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 8px rgba(214, 180, 106, 0.3); }
+  to { text-shadow: 0 0 16px rgba(214, 180, 106, 0.6); }
+}
+
