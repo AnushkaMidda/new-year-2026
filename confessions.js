@@ -42,4 +42,3 @@ confessions.forEach(text => {
   }, 100);
 });
 
-

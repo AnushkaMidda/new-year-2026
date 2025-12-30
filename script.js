@@ -24,4 +24,3 @@ for (let i = 0; i < 40; i++) {
   confetti.style.opacity = 0.4 + Math.random() * 0.6;
   document.body.appendChild(confetti);
 }
-
